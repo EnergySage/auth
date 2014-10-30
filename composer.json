@@ -1,0 +1,32 @@
+{
+	"name": "fousheezy/auth",
+	"description": "ZF2 authorization configuration and setup.",
+	"type": "library",
+	"license": "MIT",
+	"keywords": ["doctrine","module","zf2","acl"],
+	"authors": [
+		{"name": "John Foushee", "email": "johnfoushee@gmail.com", "homepage": "http://johnfoushee.com"}
+	],
+	"minimum-stability": "dev",
+	"require": {
+		"php": ">=5.3.23",
+		"zendframework/zend-servicemanager":  "~2.2.7",
+        "fousheezy/common": "@dev"
+	},
+	"require-dev": {
+        	"phpunit/phpunit":             "~3.7",
+        	"squizlabs/php_codesniffer":   "1.5.*",
+        	"zendframework/zendframework": "~2.2.7"
+    	},
+    "autoload": {
+        "psr-0": {
+            "FzyAuth\\": "module/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "/Users/fousheezy/Development/fousheezy-zf2-common"
+        }
+    ]
+}
