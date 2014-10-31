@@ -51,6 +51,6 @@ class Module implements BootstrapListenerInterface
 		/* @var $e \Zend\Mvc\MvcEvent */
 		/* @var $sm \Zend\ServiceManager\ServiceLocatorInterface */
 		$sm = $e->getApplication()->getServiceManager();
-		$sm->get('route_listener')->latch($e);
+		$sm->get('FzyAuth\Listener\Route')->latch($e);
 	}
 }
