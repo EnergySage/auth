@@ -7,8 +7,8 @@ return array(
 			'FzyAuth\Service\Acl' => 'FzyAuth\Service\Acl',
             'FzyAuth\Service\ApiRequestDetector' => 'FzyAuth\Service\ApiRequestDetector',
             'FzyAuth\Factory\Acl' => 'FzyAuth\Factory\Acl',
-            'FzyAuth\Service\ApiEnforcer\Web' => 'FzyAuth\Service\ApiEnforcer\Web',
-            'FzyAuth\Service\ApiEnforcer\Api' => 'FzyAuth\Service\ApiEnforcer\Api',
+            'FzyAuth\Service\AclEnforcer\Web' => 'FzyAuth\Service\AclEnforcer\Web',
+            'FzyAuth\Service\AclEnforcer\Api' => 'FzyAuth\Service\AclEnforcer\Api',
 		),
 		'factories' => array(
             'FzyAuth\Config' => function($sm) {
@@ -24,9 +24,9 @@ return array(
                 $detector = $sm->get('FzyAuth\Service\ApiRequestDetector');
                 return function(\Zend\Mvc\MvcEvent $e) use ($detector, $sm) {
                     if ($detector->isApiRequest($e)) {
-                        return $sm->get('FzyAuth\Service\ApiEnforcer\Api');
+                        return $sm->get('FzyAuth\Service\AclEnforcer\Api');
                     }
-                    return $sm->get('FzyAuth\Service\ApiEnforcer\Web');
+                    return $sm->get('FzyAuth\Service\AclEnforcer\Web');
                 };
 			},
 		),
