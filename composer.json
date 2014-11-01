@@ -11,7 +11,7 @@
 	"require": {
 		"php": ">=5.3.23",
 		"zendframework/zend-servicemanager":  "~2.2.7",
-        "fousheezy/common": "@dev"
+        "fousheezy/common": "dev-master"
 	},
 	"require-dev": {
         	"phpunit/phpunit":             "~3.7",
@@ -22,11 +22,5 @@
         "psr-0": {
             "FzyAuth\\": "module/"
         }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "/Users/fousheezy/Development/fzycommon"
-        }
-    ]
+    }
 }

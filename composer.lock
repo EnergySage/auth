@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "41b095b606a949a5d2cfe31c438e6c70",
+    "hash": "9c186a6b48a1937d882bd47c6905f6e8",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -408,18 +408,24 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "/Users/fousheezy/Development/fzycommon",
-                "reference": "52a29868f263dfcdd2a613ebb8c6b1c6144f8609"
+                "url": "https://github.com/fousheezy/common.git",
+                "reference": "34d158d8182d102e1001ab6501fee2b8de930f3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fousheezy/common/zipball/34d158d8182d102e1001ab6501fee2b8de930f3a",
+                "reference": "34d158d8182d102e1001ab6501fee2b8de930f3a",
+                "shasum": ""
             },
             "require": {
-                "doctrine/common": ">=2.4,<2.6-dev",
+                "doctrine/common": ">=2.4",
                 "php": ">=5.3.23",
-                "zendframework/zend-servicemanager": "~2.2.7"
+                "zendframework/zend-servicemanager": ">=2.2.7"
             },
             "require-dev": {
                 "phpunit/phpunit": "~3.7",
                 "squizlabs/php_codesniffer": "1.5.*",
-                "zendframework/zendframework": "~2.2.7"
+                "zendframework/zendframework": ">=2.2.7"
             },
             "type": "library",
             "autoload": {
@@ -427,6 +433,7 @@
                     "FzyCommon\\": "module/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -443,7 +450,7 @@
                 "module",
                 "zf2"
             ],
-            "time": "2014-10-31 15:28:43"
+            "time": "2014-11-01 16:00:20"
         },
         {
             "name": "zendframework/zendframework",
