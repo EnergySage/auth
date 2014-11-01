@@ -1,8 +1,7 @@
 <?php
-namespace Application\Entity\Base;
+namespace FzyAuth\Entity\Base;
 
 use FzyCommon\Entity\BaseNull as Entity;
-use Application\Service\Acl;
 
 class UserNull extends Entity implements UserInterface
 {

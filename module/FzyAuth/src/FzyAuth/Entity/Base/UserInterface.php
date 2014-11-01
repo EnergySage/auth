@@ -1,5 +1,5 @@
 <?php
-namespace Application\Entity\Base;
+namespace FzyAuth\Entity\Base;
 
 use FzyCommon\Entity\BaseInterface;
 use ZfcUser\Entity\UserInterface as ZfcUserInterface;

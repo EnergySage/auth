@@ -1,11 +1,11 @@
 <?php
-namespace Application\Entity\Base;
+namespace FzyAuth\Entity\Base;
 
 use FzyCommon\Entity\Base as Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Zend\Form\Annotation;
 use FzyForm\Annotation as FzyForm;
-use Application\Entity\Base\UserInterface as UserInterface;
+use FzyAuth\Entity\Base\UserInterface;
 
 /**
  * @ORM\Entity
@@ -25,7 +25,7 @@ use Application\Entity\Base\UserInterface as UserInterface;
  * })
  *
  * Class User
- * @package Application\Entity\Base
+ * @package FzyAuth\Entity\Base
  */
 class User extends Entity implements UserInterface
 {
@@ -115,9 +115,7 @@ class User extends Entity implements UserInterface
      *      }
      * })
      *
-     * @var \Application\Entity\Base\User\Role
-     *
-     *
+     * @var string
      */
     protected $role;
 
@@ -169,8 +167,8 @@ class User extends Entity implements UserInterface
      * @Annotation\Options({
      *      "label":"Status",
      *      "value_options": {
-     *          \Application\Entity\Base\UserInterface::STATE_ACTIVE: "Active",
-     *          \Application\Entity\Base\UserInterface::STATE_INACTIVE: "Inactive"
+     *          \FzyAuth\Entity\Base\UserInterface::STATE_ACTIVE: "Active",
+     *          \FzyAuth\Entity\Base\UserInterface::STATE_INACTIVE: "Inactive"
      *      },
      *      "autorender": {
      *          "ngModel": "state"

@@ -16,7 +16,7 @@ class Acl {
     {
         $acl = new ZendAcl();
         // add all roles from config
-        foreach ($roleConfig->get('roles') as $roleName => $roleData) {
+        foreach ($roleConfig->get('roles', array()) as $roleName => $roleData) {
             $roleMap = Params::create($roleData);
             $role = new \Zend\Permissions\Acl\Role\GenericRole($roleName);
             $acl->addRole($role, $roleMap->get('inherits', array()));

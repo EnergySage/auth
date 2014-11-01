@@ -14,7 +14,7 @@ class Route extends Base
 		}
 	}
 
-	protected function checkAcl(MvcEvent $e)
+	public function checkAcl(MvcEvent $e)
 	{
 		if (!$e->getRequest() instanceof \Zend\Http\Request) {
 			return;
