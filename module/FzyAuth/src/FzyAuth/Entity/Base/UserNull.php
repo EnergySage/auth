@@ -5,21 +5,6 @@ use FzyCommon\Entity\BaseNull as Entity;
 
 class UserNull extends Entity implements UserInterface
 {
-    /**
-     * @param int $loginAttempts
-     */
-    public function setLoginAttempts($loginAttempts)
-    {
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getLoginAttempts()
-    {
-        return null;
-    }
 
     /**
      * @param string $firstName

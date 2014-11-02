@@ -18,7 +18,7 @@ use FzyAuth\Entity\Base\UserInterface;
  *          "fieldsets": {
  *              {
  *                  "name": FzyForm\FieldSet::DEFAULT_NAME,
- *                  "legend": "{{profile && 'Account Details' || user.id && 'Edit User' || 'New User'}}"
+ *                  "legend": "User"
  *              }
  *          }
  *      }
@@ -191,10 +191,12 @@ class User extends Entity implements UserInterface
 
     /**
      * @param string $firstName
+     * @return $this
      */
     public function setFirstName($firstName)
     {
         $this->firstName = $firstName;
+        return $this;
     }
 
     /**
@@ -207,10 +209,12 @@ class User extends Entity implements UserInterface
 
     /**
      * @param string $lastName
+     * @return $this
      */
     public function setLastName($lastName)
     {
         $this->lastName = $lastName;
+        return $this;
     }
 
     /**
@@ -223,10 +227,12 @@ class User extends Entity implements UserInterface
 
     /**
      * @param string $userName
+     * @return $this
      */
     public function setUserName($userName)
     {
         $this->username = $userName;
+        return $this;
     }
 
     /**
@@ -252,11 +258,12 @@ class User extends Entity implements UserInterface
      *
      * @param int $id
      *
-     * @return void
+     * @return $this
      */
     public function setId($id)
     {
         $this->id = (int) $id;
+        return $this;
     }
 
     /**
@@ -274,11 +281,12 @@ class User extends Entity implements UserInterface
      *
      * @param string $email
      *
-     * @return void
+     * @return $this
      */
     public function setEmail($email)
     {
         $this->email = $email;
+        return $this;
     }
 
     /**

@@ -11,6 +11,7 @@ interface UserInterface extends BaseInterface, ZfcUserInterface
 
     /**
      * @param string $firstName
+     * @return $this
      */
     public function setFirstName($firstName);
 
@@ -21,6 +22,7 @@ interface UserInterface extends BaseInterface, ZfcUserInterface
 
     /**
      * @param string $lastName
+     * @return $this
      */
     public function setLastName($lastName);
 
@@ -31,6 +33,7 @@ interface UserInterface extends BaseInterface, ZfcUserInterface
 
     /**
      * @param string $userName
+     * @return $this
      */
     public function setUserName($userName);
 
@@ -86,6 +89,7 @@ interface UserInterface extends BaseInterface, ZfcUserInterface
 
     /**
      * @param string $passwordToken
+     * @return $this
      */
     public function setPasswordToken($passwordToken);
 
@@ -95,7 +99,7 @@ interface UserInterface extends BaseInterface, ZfcUserInterface
     public function getPasswordToken();
 
     /**
-     * @return \DateTime|null
+     * @return \DateTime
      */
     public function getUpdatedTs();
 
