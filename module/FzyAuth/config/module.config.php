@@ -69,5 +69,6 @@ return array(
 		'user_entity_class'       => 'FzyAuth\Entity\Base\User',
 		// telling ZfcUserDoctrineORM to skip the entities it defines
 		'enable_default_entities' => false,
+		'enable_username' => true,
 	),
 );
