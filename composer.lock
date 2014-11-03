@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c6df96dfc5cc0b49e7e80ba4a802d2d8",
+    "hash": "254f45bfb2a2f6837313c0c47904c18f",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -875,12 +875,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "be964e6c0c903fb209e0123ea63bcda5993cf6fe"
+                "reference": "2fc3644d2e10e14935b2c79e57a5185281eb1eb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/be964e6c0c903fb209e0123ea63bcda5993cf6fe",
-                "reference": "be964e6c0c903fb209e0123ea63bcda5993cf6fe",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/2fc3644d2e10e14935b2c79e57a5185281eb1eb7",
+                "reference": "2fc3644d2e10e14935b2c79e57a5185281eb1eb7",
                 "shasum": ""
             },
             "require": {
@@ -923,7 +923,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-10-26 07:46:28"
+            "time": "2014-11-03 03:55:50"
         },
         {
             "name": "zendframework/zendframework",
@@ -1732,12 +1732,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "4c0baf9a5b5c9e50ddd7a46f3c75cb85baf5d6c5"
+                "reference": "9da3813f36985a4089f7e83c601a1034d125ff69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/4c0baf9a5b5c9e50ddd7a46f3c75cb85baf5d6c5",
-                "reference": "4c0baf9a5b5c9e50ddd7a46f3c75cb85baf5d6c5",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/9da3813f36985a4089f7e83c601a1034d125ff69",
+                "reference": "9da3813f36985a4089f7e83c601a1034d125ff69",
                 "shasum": ""
             },
             "require": {
@@ -1770,7 +1770,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2014-10-26 07:46:28"
+            "time": "2014-11-03 03:55:50"
         }
     ],
     "aliases": [],
