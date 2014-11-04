@@ -51,7 +51,7 @@ interface AclEnforcerInterface {
 	 *
 	 * @return mixed
 	 */
-	public function hasRoute($routeName);
+	public function hasRoute(MvcEvent $e, $routeName);
 
     /**
      * @param MvcEvent $e

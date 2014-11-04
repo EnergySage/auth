@@ -28,7 +28,7 @@ class Route extends Base
 		$aclEnforcer->attachToView($e->getViewModel());
 
 		// check if acl has resource "route"
-		if (!$aclEnforcer->hasRoute($route)) {
+		if (!$aclEnforcer->hasRoute($e, $route)) {
 			return $aclEnforcer->handleRouteMissing($e);
 		}
 		if ($aclEnforcer->isAllowedToRoute($e, $route, $e->getRouteMatch()->getParam('action'))) {

@@ -1,6 +1,7 @@
 <?php
 namespace FzyAuth\Service\AclEnforcer;
 
+use Zend\Http\PhpEnvironment\Response;
 use Zend\Mvc\MvcEvent;
 use ZfcUser\Controller\UserController;
 
@@ -38,9 +39,15 @@ class Web extends Base {
      */
     public function handleNotAllowed( MvcEvent $e )
     {
+	    // is this user authenticated?
+	    if (!$this->getCurrentUser()->isNull()) {
+		    // not allowed to this route by the ACL
+		    return $this->triggerStatus($e, Response::STATUS_CODE_403);
+	    }
+	    // redirect to login
 	    if ($e->getRouteMatch()->getMatchedRouteName() == UserController::ROUTE_LOGIN) {
 		    // prevent infinite loop
-		    exit();
+		    return $this->triggerStatus($e, Response::STATUS_CODE_403);
 	    }
 	    return $this->redirectTo($e, UserController::ROUTE_LOGIN);
     }

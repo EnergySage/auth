@@ -78,7 +78,7 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
      *
      * @return mixed
      */
-    public function hasRoute( $routeName )
+    public function hasRoute(MvcEvent $e, $routeName)
     {
         return $this->getAcl()->hasResource($routeName);
     }
