@@ -1,0 +1,57 @@
+<?php
+
+return array(
+    \FzyAuth\Service\Base::MODULE_CONFIG_KEY => array(
+        'acl' => array(
+	        'roles' => array(
+				\FzyAuth\Entity\Base\UserInterface::ROLE_GUEST => array(
+					'allow' => array(
+						array(
+							'resource' => 'home',
+						),
+						array(
+							'resource' => \ZfcUser\Controller\UserController::ROUTE_LOGIN,
+						),
+						array(
+							'resource' => \ZfcUser\Controller\UserController::ROUTE_REGISTER,
+						),
+						array(
+							'resource' => \ZfcUser\Controller\UserController::CONTROLLER_NAME . '/authenticate',
+						),
+					),
+					'deny' => array(
+
+					),
+				),
+				\FzyAuth\Entity\Base\UserInterface::ROLE_USER => array(
+					'inherits' => array(\FzyAuth\Entity\Base\UserInterface::ROLE_GUEST),
+					'allow' => array(
+						array(
+							'resource' => 'home',
+						),
+						array(
+							'resource' => \ZfcUser\Controller\UserController::ROUTE_CHANGEEMAIL,
+						),
+						array(
+							'resource' => \ZfcUser\Controller\UserController::ROUTE_CHANGEPASSWD,
+						),
+						array(
+							'resource' => \ZfcUser\Controller\UserController::CONTROLLER_NAME,
+						),
+						array(
+							'resource' => \ZfcUser\Controller\UserController::CONTROLLER_NAME . '/logout',
+						),
+					),
+					'deny' => array(
+						array(
+							'resource' => \ZfcUser\Controller\UserController::ROUTE_LOGIN,
+						),
+						array(
+							'resource' => \ZfcUser\Controller\UserController::ROUTE_REGISTER,
+						),
+					),
+				),
+	        ),
+        ),
+    ),
+);

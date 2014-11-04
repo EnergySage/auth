@@ -1,6 +1,7 @@
 <?php
 namespace FzyAuth\Service\AclEnforcer;
 
+use Zend\Http\Response;
 use Zend\Mvc\MvcEvent;
 
 class Api extends Base {
@@ -12,7 +13,7 @@ class Api extends Base {
      */
     public function handleRouteMissing( MvcEvent $e )
     {
-
+		return $this->triggerStatus($e, Response::STATUS_CODE_404);
     }
 
     /**
@@ -22,7 +23,7 @@ class Api extends Base {
      */
     public function handleAllowed( MvcEvent $e )
     {
-
+		// do nothing
     }
 
     /**
@@ -32,6 +33,6 @@ class Api extends Base {
      */
     public function handleNotAllowed( MvcEvent $e )
     {
-
+	    return $this->triggerStatus($e, Response::STATUS_CODE_403);
     }
 }

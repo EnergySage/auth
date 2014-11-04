@@ -2,6 +2,7 @@
 namespace FzyAuth\Service\AclEnforcer;
 
 use Zend\Mvc\MvcEvent;
+use ZfcUser\Controller\UserController;
 
 class Web extends Base {
 
@@ -12,7 +13,12 @@ class Web extends Base {
      */
     public function handleRouteMissing( MvcEvent $e )
     {
-
+	    $routeName = 'home';
+	    if ($e->getRouteMatch()->getMatchedRouteName() == $routeName) {
+		    // prevent infinite loop
+		    exit();
+	    }
+		return $this->redirectTo($e, $routeName);
     }
 
     /**
@@ -22,7 +28,7 @@ class Web extends Base {
      */
     public function handleAllowed( MvcEvent $e )
     {
-
+	    // do nothing
     }
 
     /**
@@ -32,6 +38,10 @@ class Web extends Base {
      */
     public function handleNotAllowed( MvcEvent $e )
     {
-
+	    if ($e->getRouteMatch()->getMatchedRouteName() == UserController::ROUTE_LOGIN) {
+		    // prevent infinite loop
+		    exit();
+	    }
+	    return $this->redirectTo($e, UserController::ROUTE_LOGIN);
     }
 }

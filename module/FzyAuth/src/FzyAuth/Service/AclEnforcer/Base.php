@@ -83,5 +83,23 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
         return $this->getAcl()->hasResource($routeName);
     }
 
+	public function redirectTo(MvcEvent $e, $routeName, $routeParams = array(), $routeOptions = array())
+	{
+		$response = $e->getResponse();
+		/* @var $router \Zend\Mvc\Router\Http\TreeRouteStack */
+		$router = $this->getServiceLocator()->get('router');
+		$url = $router->assemble($routeParams, array_merge($routeOptions, array('name' => $routeName)));
+		$response->getHeaders()->addHeaderLine('Location', $url);
+		return $this->triggerStatus($e, \Zend\Http\Response::STATUS_CODE_302);
+	}
+
+	public function triggerStatus(MvcEvent $e, $status = \Zend\Http\Response::STATUS_CODE_404)
+	{
+		$response = $e->getResponse();
+		$response->setStatusCode($status);
+		$response->sendHeaders();
+		return $e->stopPropagation();
+	}
+
 
 }
