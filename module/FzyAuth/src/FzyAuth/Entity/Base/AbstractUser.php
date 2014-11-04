@@ -465,10 +465,4 @@ abstract class AbstractUser extends Entity implements UserInterface
             );
     }
 
-	/**
-	 * @return \Zend\Permissions\Acl\Role\RoleInterface[]
-	 */
-	public function getRoles() {
-		return array();
-	}
 }

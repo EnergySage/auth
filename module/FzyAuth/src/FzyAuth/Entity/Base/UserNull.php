@@ -190,7 +190,7 @@ class UserNull extends Entity implements UserInterface
      */
     public function getRole()
     {
-        return $this;
+        return static::ROLE_GUEST;
     }
 
     /**

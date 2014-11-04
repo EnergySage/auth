@@ -21,10 +21,8 @@ class Route extends Base
 		}
 		$route = $e->getRouteMatch()->getMatchedRouteName();
 
-        /* @var $enforcerFactory \Callable */
-		$enforcerFactory = $this->getServiceLocator()->get('FzyAuth\AclEnforcerFactory');
-        /* @var $aclEnforcer \FzyAuth\Service\AclEnforcerInterface */
-        $aclEnforcer = $enforcerFactory($e);
+		/* @var $aclEnforcer \FzyAuth\Service\AclEnforcerInterface */
+		$aclEnforcer = $this->getServiceLocator()->get('FzyAuth\AclEnforcerFactory');
 
 		$aclEnforcer->init($e);
 		$aclEnforcer->attachToView($e->getViewModel());

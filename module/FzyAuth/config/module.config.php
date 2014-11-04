@@ -4,6 +4,7 @@ return array(
 	'service_manager' => array(
 		'invokables' => array(
 			'FzyAuth\Listener\Route' => 'FzyAuth\Listener\Route',
+			'FzyAuth\Listener\Register' => 'FzyAuth\Listener\Register',
 			'FzyAuth\Service\Acl' => 'FzyAuth\Service\Acl',
             'FzyAuth\Service\ApiRequestDetector' => 'FzyAuth\Service\ApiRequestDetector',
             'FzyAuth\Factory\Acl' => 'FzyAuth\Factory\Acl',
@@ -16,19 +17,41 @@ return array(
                 $config = $sm->get('FzyCommon\Config');
                 return $config->getWrapped(\FzyAuth\Service\Base::MODULE_CONFIG_KEY);
             },
-            'FzyAuth\Role\Guest' => function($sm) {
-                return $sm->get('FzyAuth\Config')->get('role_guest', 'guest');
-            },
 			'FzyAuth\AclEnforcerFactory' => function($sm) {
                 /* @var $detector \FzyAuth\Service\ApiRequestDetector */
                 $detector = $sm->get('FzyAuth\Service\ApiRequestDetector');
-                return function(\Zend\Mvc\MvcEvent $e) use ($detector, $sm) {
-                    if ($detector->isApiRequest($e)) {
-                        return $sm->get('FzyAuth\Service\AclEnforcer\Api');
-                    }
-                    return $sm->get('FzyAuth\Service\AclEnforcer\Web');
-                };
+				/* @var $application \Zend\Mvc\Application */
+				return $sm->get($detector->isApiRequest($sm->get('Application')->getMvcEvent()) ? 'FzyAuth\Service\AclEnforcer\Api' : 'FzyAuth\Service\AclEnforcer\Web');
 			},
+			/**
+			 * Factory method for instantiating the configuration specified factory, running it
+			 * on the ACL configuration and returning an ACL object.
+			 * @return \Zend\Permissions\Acl\Acl
+			 */
+			'FzyAuth\Acl' => function($sm) {
+				/* @var $moduleConfig \FzyCommon\Util\Params */
+				$moduleConfig = $sm->get('FzyAuth\Config');
+				$aclConfig = $moduleConfig->getWrapped('acl');
+				/* @var $aclFactory \FzyAuth\Factory\Acl */
+				$aclFactory = $sm->get($moduleConfig->get('acl_factory', 'FzyAuth\Factory\Acl'));
+				return $aclFactory->createAcl($aclConfig, $sm);
+			},
+
+			/**
+			 * Factory to return a UserInterface object indicating the currently logged in user.
+			 *
+			 * A UserNull object is returned in the event the user is not logged in.
+			 *
+			 * @return \FzyAuth\Entity\Base\UserInterface
+			 */
+			'FzyAuth\CurrentUser' => function($sm) {
+				$zfcAuth = $sm->get('zfcuser_auth_service');
+				if ($zfcAuth->hasIdentity()) {
+					return $zfcAuth->getIdentity();
+				}
+				$nullUserClass = $sm->get('FzyAuth\Config')->get('null_user_class', '\FzyAuth\Entity\Base\UserNull');
+				return new $nullUserClass();
+			}
 		),
 	),
 	\FzyAuth\Service\Base::MODULE_CONFIG_KEY => array(
@@ -38,12 +61,8 @@ return array(
 		'intercept_api_errors' => true,
 		// whether to enforce the ACL on route events
 		'enforce_acl' => true,
-		// the acl service to use (must be an instance of FzyAuth\Service\AclEnforcerInterface)
-		'acl_service' => 'FzyAuth\Service\Acl',
         // the route name for api requests
         'api_route_name' => 'api',
-        // guest role name
-        'role_guest' => 'guest',
         // service to generate and configure ACL
         //'acl_factory' => 'FzyAuth\Factory\Acl',
 	),

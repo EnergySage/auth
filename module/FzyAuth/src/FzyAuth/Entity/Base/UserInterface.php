@@ -9,6 +9,9 @@ interface UserInterface extends BaseInterface, ZfcUserInterface
     const STATE_ACTIVE   = 'active';
     const STATE_INACTIVE = 'inactive';
 
+	const ROLE_GUEST = 'guest';
+	const ROLE_USER = 'user';
+
     /**
      * @param string $firstName
      * @return $this

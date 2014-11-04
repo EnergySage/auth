@@ -42,11 +42,7 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
     public function getAcl()
     {
         if (!isset($this->acl)) {
-            $serviceLocator = $this->getServiceLocator();
-            $aclConfig = $this->getModuleConfig()->getWrapped('acl');
-            /* @var $aclFactory \FzyAuth\Factory\Acl */
-            $aclFactory = $this->getServiceLocator()->get($this->getModuleConfig()->get('acl_factory', 'FzyAuth\Factory\Acl'));
-            $this->acl = $aclFactory->createAcl($aclConfig, $serviceLocator);
+	        $this->acl = $this->getServiceLocator()->get('FzyAuth\Acl');
         }
         return $this->acl;
     }
@@ -62,12 +58,7 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
      */
     public function isAllowed( $resource, $privilege = null )
     {
-        $role = $this->getServiceLocator()->get('FzyAuth\Role\Guest');
-        $zfcAuth = $this->getServiceLocator()->get('zfcuser_auth_service');
-        if ($zfcAuth->hasIdentity()) {
-            $role = $zfcAuth->getIdentity()->getRole();
-        }
-        return $this->getAcl()->isAllowed($role, $resource, $privilege);
+        return $this->getAcl()->isAllowed($this->getCurrentUser()->getRole(), $resource, $privilege);
     }
 
     /**
