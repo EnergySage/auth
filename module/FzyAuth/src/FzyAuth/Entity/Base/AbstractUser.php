@@ -457,8 +457,6 @@ abstract class AbstractUser extends Entity implements UserInterface
                     'email'             => $this->getEmail(),
                     'firstName'         => $this->getFirstName(),
                     'lastName'          => $this->getLastName(),
-                    'phone'             => $this->getPhone(),
-                    'notes'             => $this->getNotes(),
                     'role'             => $this->getRole(),
                     'state'             => $this->getState(),
                 )
