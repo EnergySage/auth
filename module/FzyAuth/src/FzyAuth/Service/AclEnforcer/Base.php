@@ -98,7 +98,8 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
 		$response = $e->getResponse();
 		$response->setStatusCode($status);
 		$response->sendHeaders();
-		return $e->stopPropagation();
+		$e->stopPropagation(true);
+		return $response;
 	}
 
 

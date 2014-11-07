@@ -16,7 +16,6 @@ class DispatchError extends Base
 			$debug = $this->getModuleConfig()->get( 'debug', false );
             /* @var $apiRequestDetector \FzyAuth\Service\ApiRequestDetector */
             $apiRequestDetector = $this->getServiceLocator()->get('FzyAuth\Service\ApiRequestDetector');
-
 			$this->latchTo( MvcEvent::EVENT_DISPATCH_ERROR, function (MvcEvent $e) use ($apiRequestDetector, $debug) {
 				if ($apiRequestDetector->isApiRequest($e)) {
 					/* @var $exception \Exception */

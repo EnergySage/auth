@@ -2,6 +2,7 @@
 namespace FzyAuth\Listener;
 
 use Zend\Http\PhpEnvironment\Request;
+use Zend\Http\PhpEnvironment\Response;
 use Zend\Mvc\MvcEvent;
 
 class Route extends Base

@@ -54,5 +54,6 @@ class Module implements BootstrapListenerInterface
 		// enforce ACL on route requests
 		$sm->get('FzyAuth\Listener\Route')->latch($e);
 		$sm->get('FzyAuth\Listener\Register')->latch($e);
+		$sm->get('FzyAuth\Listener\DispatchError')->latch($e);
 	}
 }

@@ -13,7 +13,9 @@ class Api extends Base {
      */
     public function handleRouteMissing( MvcEvent $e )
     {
-		return $this->triggerStatus($e, Response::STATUS_CODE_404);
+	    return $this->setResponseContent($this->triggerStatus($e, Response::STATUS_CODE_404), array(
+		    'message' => 'Route is missing from ACL',
+	    ));
     }
 
     /**
@@ -33,6 +35,19 @@ class Api extends Base {
      */
     public function handleNotAllowed( MvcEvent $e )
     {
-	    return $this->triggerStatus($e, Response::STATUS_CODE_403);
+	    return $this->setResponseContent($this->triggerStatus($e, Response::STATUS_CODE_403), array(
+		    'message' => 'Route not permitted',
+	    ));
     }
+
+	protected function setResponseContent(Response $response, array $data)
+	{
+		if ($response instanceof \Zend\Http\PhpEnvironment\Response) {
+			$response->getHeaders()->addHeaderLine('Content-Type', 'application/json');
+			$response->setContent(json_encode(array_merge(array(
+				'status' => $response->getStatusCode(),
+			), $data)));
+		}
+		return $response;
+	}
 }

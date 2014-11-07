@@ -68,9 +68,9 @@ abstract class Base extends BaseService implements ListenerInterface, EventManag
 
 
 
-	protected function latchTo($mvcEvent, $callback)
+	protected function latchTo($mvcEvent, $callback, $priority = 1)
 	{
-		$this->getEventManager()->getSharedManager()->attach('Zend\Mvc\Application', $mvcEvent, $callback);
+		$this->getEventManager()->getSharedManager()->attach('Zend\Mvc\Application', $mvcEvent, $callback, $priority);
 	}
 
 

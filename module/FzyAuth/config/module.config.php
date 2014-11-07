@@ -5,6 +5,7 @@ return array(
 		'invokables' => array(
 			'FzyAuth\Listener\Route' => 'FzyAuth\Listener\Route',
 			'FzyAuth\Listener\Register' => 'FzyAuth\Listener\Register',
+			'FzyAuth\Listener\DispatchError' => 'FzyAuth\Listener\DispatchError',
 			'FzyAuth\Service\Acl' => 'FzyAuth\Service\Acl',
             'FzyAuth\Service\ApiRequestDetector' => 'FzyAuth\Service\ApiRequestDetector',
             'FzyAuth\Factory\Acl' => 'FzyAuth\Factory\Acl',
