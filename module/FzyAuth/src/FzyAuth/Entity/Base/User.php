@@ -19,7 +19,7 @@ use Zend\Form\Annotation;
  *          "ngModel": "user",
  *          "fieldsets": {
  *              {
- *                  "name": \Application\Annotation\FieldSet::DEFAULT_NAME
+ *                  "name": \FzyForm\Annotation\FieldSet::DEFAULT_NAME
  *              }
  *          }
  *      }
