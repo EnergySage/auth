@@ -9,6 +9,8 @@ use Zend\View\Model\ModelInterface;
 
 abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterface {
 
+	const ACL_ACCESS_DENIED = 'acl_access_denied';
+
     protected $acl;
 
     /**

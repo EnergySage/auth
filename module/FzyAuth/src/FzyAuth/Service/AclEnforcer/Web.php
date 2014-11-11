@@ -42,7 +42,12 @@ class Web extends Base {
 	    // is this user authenticated?
 	    if (!$this->getCurrentUser()->isNull()) {
 		    // not allowed to this route by the ACL
-		    return $this->triggerStatus($e, Response::STATUS_CODE_403);
+		    $app = $e->getTarget();
+		    $route = $e->getRouteMatch();
+		    $e->setError(self::ACL_ACCESS_DENIED)
+			    ->setParam('route', $route->getMatchedRouteName());
+		    $app->getEventManager()->trigger(MvcEvent::EVENT_DISPATCH_ERROR, $e);
+		    return;
 	    }
 	    // redirect to login
 	    if ($e->getRouteMatch()->getMatchedRouteName() == UserController::ROUTE_LOGIN) {
