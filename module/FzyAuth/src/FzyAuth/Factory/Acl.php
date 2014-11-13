@@ -1,12 +1,13 @@
 <?php
 namespace FzyAuth\Factory;
 
+use FzyAuth\Util\Acl\Resource as AclResource;
 use FzyCommon\Util\Params;
 use \Zend\Permissions\Acl\Acl as ZendAcl;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class Acl {
-
+class Acl
+{
     /**
      * @param Params $roleConfig
      *
@@ -22,17 +23,11 @@ class Acl {
             $acl->addRole($role, $roleMap->get('inherits', array()));
             // add resources from config
             foreach ($roleMap->get('allow', array()) as $resourceData) {
-                $resourceMap = Params::create($resourceData);
-                $resource = $resourceMap->get('resource');
-                $this->addAclResource($acl, $resource)
-                    ->addAllowedResource($acl, $role, $resource, $resourceMap->get('privileges'));
+                $this->addAllowedResource($acl, $role, AclResource::create(Params::create($resourceData)));
             }
             // add denies
             foreach ($roleMap->get('deny', array()) as $resourceData) {
-                $resourceMap = Params::create($resourceData);
-                $resource = $resourceMap->get('resource');
-                $this->addAclResource($acl, $resource)
-                    ->addDeniedResource($acl, $role, $resource, $resourceMap->get('privileges'));
+                $this->addDeniedResource($acl, $role, AclResource::create(Params::create($resourceData)));
             }
         }
 
@@ -46,9 +41,11 @@ class Acl {
      * @param $resource
      * @param $privileges
      */
-    protected function addAllowedResource(ZendAcl $acl, $role, $resource, $privileges)
+    protected function addAllowedResource(ZendAcl $acl, $role, AclResource $resource)
     {
-        $acl->allow($role, $resource, $privileges);
+        $this->addAclResource($acl, $resource);
+        $acl->allow($role, $resource->getResource(), $resource->getPrivileges());
+
         return $this;
     }
 
@@ -58,9 +55,11 @@ class Acl {
      * @param $resource
      * @param $privileges
      */
-    protected function addDeniedResource(ZendAcl $acl, $role, $resource, $privileges)
+    protected function addDeniedResource(ZendAcl $acl, $role, AclResource $resource)
     {
-        $acl->deny($role, $resource, $privileges);
+        $this->addAclResource($acl, $resource);
+        $acl->deny($role, $resource->getResource(), $resource->getPrivileges());
+
         return $this;
     }
 
@@ -68,11 +67,12 @@ class Acl {
      * @param Acl $acl
      * @param $resource
      */
-    protected function addAclResource(ZendAcl $acl, $resource)
+    protected function addAclResource(ZendAcl $acl, AclResource $resource)
     {
-        if (!$acl->hasResource($resource)) {
-            $acl->addResource(new \Zend\Permissions\Acl\Resource\GenericResource($resource));
+        if (!$acl->hasResource($resource->getResource())) {
+            $acl->addResource(new \Zend\Permissions\Acl\Resource\GenericResource($resource->getResource()));
         }
+
         return $this;
     }
 

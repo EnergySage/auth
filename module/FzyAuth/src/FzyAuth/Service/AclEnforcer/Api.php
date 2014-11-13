@@ -4,18 +4,18 @@ namespace FzyAuth\Service\AclEnforcer;
 use Zend\Http\Response;
 use Zend\Mvc\MvcEvent;
 
-class Api extends Base {
-
+class Api extends Base
+{
     /**
      * @param MvcEvent $e
      *
      * @return mixed
      */
-    public function handleRouteMissing( MvcEvent $e )
+    public function handleRouteMissing(MvcEvent $e)
     {
-	    return $this->setResponseContent($this->triggerStatus($e, Response::STATUS_CODE_404), array(
-		    'message' => 'Route is missing from ACL',
-	    ));
+        return $this->setResponseContent($this->triggerStatus($e, Response::STATUS_CODE_404), array(
+            'message' => 'Route is missing from ACL',
+        ));
     }
 
     /**
@@ -23,9 +23,9 @@ class Api extends Base {
      *
      * @return mixed
      */
-    public function handleAllowed( MvcEvent $e )
+    public function handleAllowed(MvcEvent $e)
     {
-		// do nothing
+        // do nothing
     }
 
     /**
@@ -33,21 +33,22 @@ class Api extends Base {
      *
      * @return mixed
      */
-    public function handleNotAllowed( MvcEvent $e )
+    public function handleNotAllowed(MvcEvent $e)
     {
-	    return $this->setResponseContent($this->triggerStatus($e, Response::STATUS_CODE_403), array(
-		    'message' => 'Route not permitted',
-	    ));
+        return $this->setResponseContent($this->triggerStatus($e, Response::STATUS_CODE_403), array(
+            'message' => 'Route not permitted',
+        ));
     }
 
-	protected function setResponseContent(Response $response, array $data)
-	{
-		if ($response instanceof \Zend\Http\PhpEnvironment\Response) {
-			$response->getHeaders()->addHeaderLine('Content-Type', 'application/json');
-			$response->setContent(json_encode(array_merge(array(
-				'status' => $response->getStatusCode(),
-			), $data)));
-		}
-		return $response;
-	}
+    protected function setResponseContent(Response $response, array $data)
+    {
+        if ($response instanceof \Zend\Http\PhpEnvironment\Response) {
+            $response->getHeaders()->addHeaderLine('Content-Type', 'application/json');
+            $response->setContent(json_encode(array_merge(array(
+                'status' => $response->getStatusCode(),
+            ), $data)));
+        }
+
+        return $response;
+    }
 }

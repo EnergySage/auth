@@ -3,13 +3,12 @@ namespace FzyAuth\Service\AclEnforcer;
 
 use FzyAuth\Service\Acl;
 use FzyAuth\Service\AclEnforcerInterface;
-use FzyCommon\Util\Params;
 use Zend\Mvc\MvcEvent;
 use Zend\View\Model\ModelInterface;
 
-abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterface {
-
-	const ACL_ACCESS_DENIED = 'acl_access_denied';
+abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterface
+{
+    const ACL_ACCESS_DENIED = 'acl_access_denied';
 
     protected $acl;
 
@@ -20,7 +19,7 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
      *
      * @return mixed
      */
-    public function init( MvcEvent $e )
+    public function init(MvcEvent $e)
     {
 
     }
@@ -32,9 +31,10 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
      *
      * @return mixed
      */
-    public function attachToView( ModelInterface $viewModel )
+    public function attachToView(ModelInterface $viewModel)
     {
         $viewModel->setVariable('acl', $this->getAcl());
+
         return $this;
     }
 
@@ -44,11 +44,11 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
     public function getAcl()
     {
         if (!isset($this->acl)) {
-	        $this->acl = $this->getServiceLocator()->get('FzyAuth\Acl');
+            $this->acl = $this->getServiceLocator()->get('FzyAuth\Acl');
         }
+
         return $this->acl;
     }
-
 
     /**
      * Abstraction to use current user role (guest if not logged in)
@@ -58,7 +58,7 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
      *
      * @return mixed
      */
-    public function isAllowed( $resource, $privilege = null )
+    public function isAllowed($resource, $privilege = null)
     {
         return $this->getAcl()->isAllowed($this->getCurrentUser()->getRole(), $resource, $privilege);
     }
@@ -70,8 +70,12 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
      *
      * @return mixed
      */
-    public function isAllowedToRoute( MvcEvent $e, $routeName, $action )
+    public function isAllowedToRoute(MvcEvent $e, $routeName, $controller, $action)
     {
+        if ($this->hasControllerResource($controller)) {
+            return $this->isAllowed($controller, $action);
+        }
+
         return $this->isAllowed($routeName, $action);
     }
 
@@ -80,29 +84,64 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
      *
      * @return mixed
      */
-    public function hasRoute(MvcEvent $e, $routeName)
+    public function hasRoute(MvcEvent $e, $routeName, $controller, $action)
     {
-        return $this->getAcl()->hasResource($routeName);
+        return $this->hasRouteResource($routeName) || $this->hasControllerResource($controller);
     }
 
-	public function redirectTo(MvcEvent $e, $routeName, $routeParams = array(), $routeOptions = array())
-	{
-		$response = $e->getResponse();
-		/* @var $router \Zend\Mvc\Router\Http\TreeRouteStack */
-		$router = $this->getServiceLocator()->get('router');
-		$url = $router->assemble($routeParams, array_merge($routeOptions, array('name' => $routeName)));
-		$response->getHeaders()->addHeaderLine('Location', $url);
-		return $this->triggerStatus($e, \Zend\Http\Response::STATUS_CODE_302);
-	}
+    /**
+     * @param $routeName
+     *
+     * @return bool
+     */
+    public function hasRouteResource($routeName)
+    {
+        return $this->getAcl()->hasResource(static::RESOURCE_ROUTE_PREFIX.$routeName);
+    }
 
-	public function triggerStatus(MvcEvent $e, $status = \Zend\Http\Response::STATUS_CODE_404)
-	{
-		$response = $e->getResponse();
-		$response->setStatusCode($status);
-		$response->sendHeaders();
-		$e->stopPropagation(true);
-		return $response;
-	}
+    /**
+     * @param $controller
+     *
+     * @return bool
+     */
+    public function hasControllerResource($controller)
+    {
+        return $this->getAcl()->hasResource(static::RESOURCE_CONTROLLER_PREFIX.$controller);
+    }
 
+    /**
+     * @param MvcEvent $e
+     * @param $routeName
+     * @param array    $routeParams
+     * @param array    $routeOptions
+     *
+     * @return \Zend\Stdlib\ResponseInterface
+     */
+    public function redirectTo(MvcEvent $e, $routeName, $routeParams = array(), $routeOptions = array())
+    {
+        $response = $e->getResponse();
+        /* @var $router \Zend\Mvc\Router\Http\TreeRouteStack */
+        $router = $this->getServiceLocator()->get('router');
+        $url = $router->assemble($routeParams, array_merge($routeOptions, array('name' => $routeName)));
+        $response->getHeaders()->addHeaderLine('Location', $url);
+
+        return $this->triggerStatus($e, \Zend\Http\Response::STATUS_CODE_302);
+    }
+
+    /**
+     * @param MvcEvent $e
+     * @param int      $status
+     *
+     * @return \Zend\Stdlib\ResponseInterface
+     */
+    public function triggerStatus(MvcEvent $e, $status = \Zend\Http\Response::STATUS_CODE_404)
+    {
+        $response = $e->getResponse();
+        $response->setStatusCode($status);
+        $response->sendHeaders();
+        $e->stopPropagation(true);
+
+        return $response;
+    }
 
 }

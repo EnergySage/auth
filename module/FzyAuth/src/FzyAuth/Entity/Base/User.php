@@ -2,12 +2,8 @@
 
 namespace FzyAuth\Entity\Base;
 
-
-use FzyAuth\Entity\Base\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
-use FzyCommon\Entity\BaseInterface;
 use Zend\Form\Annotation;
-
 
 /**
  *
@@ -25,7 +21,6 @@ use Zend\Form\Annotation;
  *      }
  * })
  */
-class User extends AbstractUser {
-
-
+class User extends AbstractUser
+{
 }

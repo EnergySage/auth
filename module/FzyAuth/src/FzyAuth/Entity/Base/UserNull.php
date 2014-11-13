@@ -202,7 +202,6 @@ class UserNull extends Entity implements UserInterface
         return $this;
     }
 
-
     /**
      * @return \DateTime|null
      */

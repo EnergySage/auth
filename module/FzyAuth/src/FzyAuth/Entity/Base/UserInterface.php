@@ -9,11 +9,11 @@ interface UserInterface extends BaseInterface, ZfcUserInterface
     const STATE_ACTIVE   = 'active';
     const STATE_INACTIVE = 'inactive';
 
-	const ROLE_GUEST = 'guest';
-	const ROLE_USER = 'user';
+    const ROLE_GUEST = 'guest';
+    const ROLE_USER = 'user';
 
     /**
-     * @param string $firstName
+     * @param  string $firstName
      * @return $this
      */
     public function setFirstName($firstName);
@@ -24,7 +24,7 @@ interface UserInterface extends BaseInterface, ZfcUserInterface
     public function getFirstName();
 
     /**
-     * @param string $lastName
+     * @param  string $lastName
      * @return $this
      */
     public function setLastName($lastName);
@@ -35,7 +35,7 @@ interface UserInterface extends BaseInterface, ZfcUserInterface
     public function getLastName();
 
     /**
-     * @param string $userName
+     * @param  string $userName
      * @return $this
      */
     public function setUserName($userName);
@@ -91,7 +91,7 @@ interface UserInterface extends BaseInterface, ZfcUserInterface
     public function setRole($role);
 
     /**
-     * @param string $passwordToken
+     * @param  string $passwordToken
      * @return $this
      */
     public function setPasswordToken($passwordToken);

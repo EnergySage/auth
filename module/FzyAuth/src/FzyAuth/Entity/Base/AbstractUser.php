@@ -4,8 +4,6 @@ namespace FzyAuth\Entity\Base;
 use FzyCommon\Entity\Base as Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Zend\Form\Annotation;
-use FzyForm\Annotation as FzyForm;
-use FzyAuth\Entity\Base\UserInterface;
 
 /**
  * @ORM\MappedSuperclass
@@ -175,16 +173,17 @@ abstract class AbstractUser extends Entity implements UserInterface
     public function __construct()
     {
         $this->state = UserInterface::STATE_ACTIVE;
-	    $this->role = 'guest';
+        $this->role = 'guest';
     }
 
     /**
-     * @param string $firstName
+     * @param  string $firstName
      * @return $this
      */
     public function setFirstName($firstName)
     {
         $this->firstName = $firstName;
+
         return $this;
     }
 
@@ -197,12 +196,13 @@ abstract class AbstractUser extends Entity implements UserInterface
     }
 
     /**
-     * @param string $lastName
+     * @param  string $lastName
      * @return $this
      */
     public function setLastName($lastName)
     {
         $this->lastName = $lastName;
+
         return $this;
     }
 
@@ -215,12 +215,13 @@ abstract class AbstractUser extends Entity implements UserInterface
     }
 
     /**
-     * @param string $userName
+     * @param  string $userName
      * @return $this
      */
     public function setUserName($userName)
     {
         $this->username = $userName;
+
         return $this;
     }
 
@@ -252,6 +253,7 @@ abstract class AbstractUser extends Entity implements UserInterface
     public function setId($id)
     {
         $this->id = (int) $id;
+
         return $this;
     }
 
@@ -275,6 +277,7 @@ abstract class AbstractUser extends Entity implements UserInterface
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 
@@ -360,8 +363,9 @@ abstract class AbstractUser extends Entity implements UserInterface
      */
     public function setRole($role)
     {
-	    $this->role = $role;
-	    return $this;
+        $this->role = $role;
+
+        return $this;
     }
 
     /**

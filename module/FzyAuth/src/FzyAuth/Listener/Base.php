@@ -6,73 +6,77 @@ use Zend\Http\PhpEnvironment\Response;
 use Zend\Mvc\MvcEvent;
 use FzyAuth\Service\Base as BaseService;
 
-abstract class Base extends BaseService implements ListenerInterface, EventManagerAwareInterface {
+abstract class Base extends BaseService implements ListenerInterface, EventManagerAwareInterface
+{
+    protected $responseCode = Response::STATUS_CODE_302;
 
-	protected $responseCode = Response::STATUS_CODE_302;
+    protected $eventManager;
 
-	protected $eventManager;
+    protected function sendToRouteNamed(MvcEvent $e, $routeName, $routeParams = array(), $routeOptions = array())
+    {
+        $url = $this->urlFromRoute($routeName, $routeParams, $routeOptions);
 
-	protected function sendToRouteNamed(MvcEvent $e, $routeName, $routeParams = array(), $routeOptions = array())
-	{
-		$url = $this->urlFromRoute($routeName, $routeParams, $routeOptions);
-		return $this->sendToUrl($e, $url);
-	}
+        return $this->sendToUrl($e, $url);
+    }
 
-	protected function urlFromRoute($routeName, $params = array(), $options = array()) {
-		return $this->getServiceLocator()->get('router')->assemble($params, array('name' => $routeName));
-	}
+    protected function urlFromRoute($routeName, $params = array(), $options = array())
+    {
+        return $this->getServiceLocator()->get('router')->assemble($params, array('name' => $routeName));
+    }
 
-	protected function sendToUrl(MvcEvent $e, $url) {
-		$response = $e->getResponse();
-		$response->getHeaders()->addHeaderLine('Location', $url);
-		$response->setStatusCode($this->responseCode);
-		$response->sendHeaders();
-		return $e->stopPropagation();
-	}
+    protected function sendToUrl(MvcEvent $e, $url)
+    {
+        $response = $e->getResponse();
+        $response->getHeaders()->addHeaderLine('Location', $url);
+        $response->setStatusCode($this->responseCode);
+        $response->sendHeaders();
 
-	/**
-	 * @return int
-	 */
-	public function getResponseCode() {
-		return $this->responseCode;
-	}
+        return $e->stopPropagation();
+    }
 
-	/**
-	 * @param int $responseCode
-	 *
-	 * @return Base
-	 */
-	public function setResponseCode( $responseCode ) {
-		$this->responseCode = $responseCode;
+    /**
+     * @return int
+     */
+    public function getResponseCode()
+    {
+        return $this->responseCode;
+    }
 
-		return $this;
-	}
+    /**
+     * @param int $responseCode
+     *
+     * @return Base
+     */
+    public function setResponseCode($responseCode)
+    {
+        $this->responseCode = $responseCode;
 
-	/**
-	 * @return EventManagerInterface
-	 */
-	public function getEventManager() {
-		return $this->eventManager;
-	}
+        return $this;
+    }
 
-	/**
-	 * @param mixed $eventManager
-	 *
-	 * @return Base
-	 */
-	public function setEventManager(EventManagerInterface $eventManager ) {
-		$this->eventManager = $eventManager;
+    /**
+     * @return EventManagerInterface
+     */
+    public function getEventManager()
+    {
+        return $this->eventManager;
+    }
 
-		return $this;
-	}
+    /**
+     * @param mixed $eventManager
+     *
+     * @return Base
+     */
+    public function setEventManager(EventManagerInterface $eventManager)
+    {
+        $this->eventManager = $eventManager;
 
+        return $this;
+    }
 
-
-	protected function latchTo($mvcEvent, $callback, $priority = 1)
-	{
-		$this->getEventManager()->getSharedManager()->attach('Zend\Mvc\Application', $mvcEvent, $callback, $priority);
-	}
-
-
+    protected function latchTo($mvcEvent, $callback, $priority = 1)
+    {
+        $this->getEventManager()->getSharedManager()->attach('Zend\Mvc\Application', $mvcEvent, $callback, $priority);
+    }
 
 }
