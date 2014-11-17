@@ -66,6 +66,14 @@ return array(
         'api_route_name' => 'api',
         // service to generate and configure ACL
         //'acl_factory' => 'FzyAuth\Factory\Acl',
+		// layout to use on web dispatch errors
+//		'web_error_layout' => 'layout/layout',
+		// template to use on web dispatch errors
+//		'web_error_template' => 'error/403'
+		// whether to intercept API request errors
+//		'intercept_api_errors' => true,
+		// whether to intercept Web request errors
+//		'intercept_web_errors' => true,
 	),
 	'doctrine' => array(
 		'driver' => array(
