@@ -30,12 +30,20 @@ class Route extends Base
         $controller = $e->getRouteMatch()->getParam('controller');
         $action = $e->getRouteMatch()->getParam('action');
 
+        $missing = true;
         if ($aclEnforcer->hasControllerResource($controller)) {
-            return $aclEnforcer->isAllowed(AclEnforcerInterface::RESOURCE_CONTROLLER_PREFIX . $controller, $action) ? $aclEnforcer->handleAllowed($e) : $aclEnforcer->handleNotAllowed($e);
-        } elseif ($aclEnforcer->hasRouteResource($route)) {
-            return $aclEnforcer->isAllowed(AclEnforcerInterface::RESOURCE_ROUTE_PREFIX . $route, $action) ? $aclEnforcer->handleAllowed($e) : $aclEnforcer->handleNotAllowed($e);
+            $missing = false;
+            if ($aclEnforcer->isAllowed(AclEnforcerInterface::RESOURCE_CONTROLLER_PREFIX . $controller, $action)) {
+                return $aclEnforcer->handleAllowed($e);
+            }
+        }
+        if ($aclEnforcer->hasRouteResource($route)) {
+            $missing = false;
+            if ($aclEnforcer->isAllowed(AclEnforcerInterface::RESOURCE_ROUTE_PREFIX . $route, $action)) {
+                return $aclEnforcer->handleAllowed($e);
+            }
         }
 
-        return $aclEnforcer->handleRouteMissing($e);
+        return $missing ? $aclEnforcer->handleRouteMissing($e) : $aclEnforcer->handleNotAllowed($e);
     }
 }
