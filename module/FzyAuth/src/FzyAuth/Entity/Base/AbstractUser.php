@@ -140,6 +140,7 @@ abstract class AbstractUser extends Entity implements UserInterface
      *          "messages" : { "isEmpty" : "Please provide an email address"}
      *          }
      *      })
+     * @Annotation\Validator({"name": "EmailAddress"})
      * @var string
      */
     protected $email;
