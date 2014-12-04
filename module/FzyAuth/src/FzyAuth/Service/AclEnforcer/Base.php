@@ -120,9 +120,7 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
     public function redirectTo(MvcEvent $e, $routeName, $routeParams = array(), $routeOptions = array())
     {
         $response = $e->getResponse();
-        /* @var $router \Zend\Mvc\Router\Http\TreeRouteStack */
-        $router = $this->getServiceLocator()->get('router');
-        $url = $router->assemble($routeParams, array_merge($routeOptions, array('name' => $routeName)));
+        $url = $this->url()->fromRoute($routeName, $routeParams, $routeOptions);
         $response->getHeaders()->addHeaderLine('Location', $url);
 
         return $this->triggerStatus($e, \Zend\Http\Response::STATUS_CODE_302);
