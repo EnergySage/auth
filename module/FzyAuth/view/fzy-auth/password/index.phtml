@@ -1,0 +1,40 @@
+<?php
+/* @var $form \Zend\Form\Form */
+    $form = $this->forgotForm;
+    $form->prepare();
+    $form->setAttribute('action', $this->url('fzyauth-password/forgot/post'));
+    $form->setAttribute('method', 'post');
+/* @var $element \Zend\Form\Element */
+    $element = $form->get('email');
+?>
+
+<section class="login animated fadeIn">
+
+    <?php echo $this->form()->openTag($form); ?>
+
+    <h1><?php echo $this->translate('Forgot Your Password?'); ?></h1>
+    <p><?php echo $this->translate('Enter your email address below, and we\'ll email you instructions on how to change your password.'); ?></p>
+
+            <div class="field">
+                <?php echo $this->formLabel($element); ?>
+                <?php echo $this->formInput($element); ?>
+                <div>
+                    <?php
+                    echo $this->formElementErrors()
+                        ->setMessageOpenFormat('<strong class="error-message">')
+                        ->setMessageSeparatorString('</strong><strong class="help-inline">')
+                        ->setMessageCloseString('</strong>')
+                        ->render($element);
+                    ?>
+                </div>
+            </div>
+            <?php echo $this->formButton($form->get('submit')) ?>
+            <?php /*
+                    <!-- if there's an error, use the following
+                    <input class="animated shake" type="submit" value="Request Password" />
+                    -->
+            */ ?>
+    <?php echo $this->form()->closeTag(); ?>
+
+</section>
+

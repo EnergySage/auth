@@ -1,0 +1,45 @@
+<?php
+    $form = $this->changePasswordForm;
+    $form->prepare();
+    $form->setAttribute('action', $this->url('fzyauth-password/reset/post', array('token' => $form->get('token')->getValue())));
+    $form->setAttribute('method', 'post');
+?>
+<section class="login animated fadeIn">
+
+    <?php echo $this->form()->openTag($form); ?>
+
+    <h1><?php echo $this->translate('Set Password'); ?></h1>
+
+<!--    --><?php //echo $this->formInput($form->get('token')); ?>
+
+    <div class="field">
+        <?php echo $this->formLabel($form->get('newCredential')); ?>
+        <?php echo $this->formInput($form->get('newCredential'));?>
+        <div>
+            <?php echo $this->formElementErrors()
+                ->setMessageOpenFormat('<strong class="error-message">')
+                ->setMessageSeparatorString('</strong><strong class="help-inline">')
+                ->setMessageCloseString('</strong>')
+                ->render($form->get('newCredential'));
+            ?>
+        </div>
+    </div>
+
+    <div class="field">
+        <?php echo $this->formLabel($form->get('newCredentialVerify')); ?>
+        <?php echo $this->formInput($form->get('newCredentialVerify')); ?>
+        <div>
+            <?php echo $this->formElementErrors()
+                ->setMessageOpenFormat('<strong class="error-message">')
+                ->setMessageSeparatorString('</strong><strong class="help-inline">')
+                ->setMessageCloseString('</strong>')
+                ->render($form->get('newCredentialVerify'));
+            ?>
+        </div>
+    </div>
+
+    <?php echo $this->formButton($form->get('submit')) ?>
+
+    <?php echo $this->form()->closeTag(); ?>
+
+</section>
