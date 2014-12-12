@@ -35,4 +35,5 @@ return array(
     'FzyAuth\Util\Acl\Resource'               => __DIR__ . '/src/FzyAuth/Util/Acl/Resource.php',
     'FzyAuth\Validator\PasswordFormat'        => __DIR__ . '/src/FzyAuth/Validator/PasswordFormat.php',
     'FzyAuth\Validator\PasswordIdentical'     => __DIR__ . '/src/FzyAuth/Validator/PasswordIdentical.php',
+    'FzyAuth\View\Helper\Allowed'             => __DIR__ . '/src/FzyAuth/View/Helper/Allowed.php',
 );

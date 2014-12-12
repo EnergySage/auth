@@ -165,6 +165,11 @@ return array(
             },
 		),
 	),
+    'view_helpers' => array(
+        'invokables' => array(
+            'fzyAllowed' => 'FzyAuth\View\Helper\Allowed',
+        ),
+    ),
 	\FzyAuth\Service\Base::MODULE_CONFIG_KEY => array(
 		// whether to display exception traces
 		'debug' => true,
