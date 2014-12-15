@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cafef7825a3d9b1105fae4ead13ad868",
+    "hash": "156a127832269e94a27d7fb4b48a27f9",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -842,19 +842,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fousheezy/common.git",
-                "reference": "2c9dfcb415220c56e749cc17ca03b03de22bab1c"
+                "reference": "f644fa625b5c4f32f4a2100123f14f1572e357b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fousheezy/common/zipball/2c9dfcb415220c56e749cc17ca03b03de22bab1c",
-                "reference": "2c9dfcb415220c56e749cc17ca03b03de22bab1c",
+                "url": "https://api.github.com/repos/fousheezy/common/zipball/f644fa625b5c4f32f4a2100123f14f1572e357b7",
+                "reference": "f644fa625b5c4f32f4a2100123f14f1572e357b7",
                 "shasum": ""
             },
             "require": {
                 "aws/aws-sdk-php": "2.7.2",
                 "doctrine/common": ">=2.4",
                 "php": ">=5.4",
-                "predis/predis": "1.0.0",
                 "zendframework/zend-servicemanager": ">=2.2.7"
             },
             "require-dev": {
@@ -885,7 +884,7 @@
                 "module",
                 "zf2"
             ],
-            "time": "2014-12-12 17:48:54"
+            "time": "2014-12-15 19:48:11"
         },
         {
             "name": "fousheezy/form",
@@ -893,12 +892,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fousheezy/form.git",
-                "reference": "21a9f412edc1818cc5813257dad76cc3987f8819"
+                "reference": "1e2fb23c5fb51614b92ccdff16224de2e03d8bb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fousheezy/form/zipball/21a9f412edc1818cc5813257dad76cc3987f8819",
-                "reference": "21a9f412edc1818cc5813257dad76cc3987f8819",
+                "url": "https://api.github.com/repos/fousheezy/form/zipball/1e2fb23c5fb51614b92ccdff16224de2e03d8bb9",
+                "reference": "1e2fb23c5fb51614b92ccdff16224de2e03d8bb9",
                 "shasum": ""
             },
             "require": {
@@ -937,7 +936,7 @@
                 "module",
                 "zf2"
             ],
-            "time": "2014-12-12 17:49:22"
+            "time": "2014-12-12 17:59:18"
         },
         {
             "name": "guzzle/guzzle",
@@ -1032,38 +1031,46 @@
             "time": "2014-12-11 05:46:03"
         },
         {
-            "name": "predis/predis",
-            "version": "v1.0.0",
+            "name": "rhumsaa/uuid",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nrk/predis.git",
-                "reference": "d4be306d0aca28b5633b96adef03b29fea569c2f"
+                "url": "https://github.com/ramsey/uuid.git",
+                "reference": "96a01caa11a2f4136293bf60bbe247597b3eeb36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/d4be306d0aca28b5633b96adef03b29fea569c2f",
-                "reference": "d4be306d0aca28b5633b96adef03b29fea569c2f",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/96a01caa11a2f4136293bf60bbe247597b3eeb36",
+                "reference": "96a01caa11a2f4136293bf60bbe247597b3eeb36",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": ">=5.3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "doctrine/dbal": ">=2.3",
+                "moontoast/math": "~1.1",
+                "phpunit/phpunit": "~4.1",
+                "satooshi/php-coveralls": "~0.6",
+                "symfony/console": "~2.3"
             },
             "suggest": {
-                "ext-curl": "Allows access to Webdis when paired with phpiredis",
-                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+                "doctrine/dbal": "Allow the use of a UUID as doctrine field type.",
+                "moontoast/math": "Support for converting UUID to 128-bit integer (in string form).",
+                "symfony/console": "Support for use of the bin/uuid command line tool."
             },
+            "bin": [
+                "bin/uuid"
+            ],
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "2.8.x-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Predis\\": "src/"
+                    "Rhumsaa\\Uuid\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1072,19 +1079,91 @@
             ],
             "authors": [
                 {
-                    "name": "Daniele Alessandri",
-                    "email": "suppakilla@gmail.com",
-                    "homepage": "http://clorophilla.net"
+                    "name": "Marijn Huizendveld",
+                    "email": "marijn.huizendveld@gmail.com"
+                },
+                {
+                    "name": "Ben Ramsey",
+                    "homepage": "http://benramsey.com"
                 }
             ],
-            "description": "Flexible and feature-complete PHP client library for Redis",
-            "homepage": "http://github.com/nrk/predis",
+            "description": "A PHP 5.3+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
+            "homepage": "https://github.com/ramsey/uuid",
             "keywords": [
-                "nosql",
-                "predis",
-                "redis"
+                "guid",
+                "identifier",
+                "uuid"
             ],
-            "time": "2014-08-01 09:59:50"
+            "time": "2014-11-09 18:48:45"
+        },
+        {
+            "name": "slm/mail",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/juriansluiman/SlmMail.git",
+                "reference": "a017e3914aa56f02fff0747b4ae273816e68046f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/juriansluiman/SlmMail/zipball/a017e3914aa56f02fff0747b4ae273816e68046f",
+                "reference": "a017e3914aa56f02fff0747b4ae273816e68046f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zendframework/zend-http": "~2.0",
+                "zendframework/zend-mail": "~2.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php-zf2": ">=1.0.1",
+                "zendframework/zendframework": "~2.0"
+            },
+            "suggest": {
+                "aws/aws-sdk-php-zf2": "If you need to use Amazon SES"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "SlmMail\\": "src/",
+                    "SlmMailTest\\": "tests/"
+                },
+                "classmap": [
+                    "./"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jurian Sluiman",
+                    "email": "jurian@juriansluiman.nl",
+                    "homepage": "http://juriansluiman.nl/"
+                },
+                {
+                    "name": "Michaël Gallego",
+                    "email": "mic.gallego@gmail.com",
+                    "homepage": "http://michaelgallego.fr"
+                }
+            ],
+            "description": "Integration of various email service providers in the Zend Framework Zend\\Mail",
+            "homepage": "https://github.com/juriansluiman/SlmMail",
+            "keywords": [
+                "elastic email",
+                "elasticemail",
+                "email",
+                "mailgun",
+                "mandrill",
+                "postage",
+                "postmark",
+                "send grid",
+                "sendgrid",
+                "transactional email",
+                "zf2"
+            ],
+            "time": "2014-06-12 06:46:40"
         },
         {
             "name": "symfony/console",
@@ -1093,12 +1172,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "3b5676fd6209f27fdea897895fdb3048c5e422f1"
+                "reference": "edd4b2ff8c3b4eab7b1063d234be6104c7353947"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/3b5676fd6209f27fdea897895fdb3048c5e422f1",
-                "reference": "3b5676fd6209f27fdea897895fdb3048c5e422f1",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/edd4b2ff8c3b4eab7b1063d234be6104c7353947",
+                "reference": "edd4b2ff8c3b4eab7b1063d234be6104c7353947",
                 "shasum": ""
             },
             "require": {
@@ -1141,7 +1220,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-08 08:43:57"
+            "time": "2014-12-12 16:23:01"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1150,12 +1229,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "fb44a3acc6b9788106a2b91ab71b889ce313ac60"
+                "reference": "50f680f99c702c831314c00220c222aaff8916f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/fb44a3acc6b9788106a2b91ab71b889ce313ac60",
-                "reference": "fb44a3acc6b9788106a2b91ab71b889ce313ac60",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/50f680f99c702c831314c00220c222aaff8916f8",
+                "reference": "50f680f99c702c831314c00220c222aaff8916f8",
                 "shasum": ""
             },
             "require": {
@@ -1199,7 +1278,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-08 08:43:57"
+            "time": "2014-12-12 16:23:01"
         },
         {
             "name": "zendframework/zendframework",
@@ -1925,141 +2004,6 @@
                 "xunit"
             ],
             "time": "2014-02-16 12:43:56"
-        },
-        {
-            "name": "rhumsaa/uuid",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ramsey/uuid.git",
-                "reference": "96a01caa11a2f4136293bf60bbe247597b3eeb36"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/96a01caa11a2f4136293bf60bbe247597b3eeb36",
-                "reference": "96a01caa11a2f4136293bf60bbe247597b3eeb36",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "doctrine/dbal": ">=2.3",
-                "moontoast/math": "~1.1",
-                "phpunit/phpunit": "~4.1",
-                "satooshi/php-coveralls": "~0.6",
-                "symfony/console": "~2.3"
-            },
-            "suggest": {
-                "doctrine/dbal": "Allow the use of a UUID as doctrine field type.",
-                "moontoast/math": "Support for converting UUID to 128-bit integer (in string form).",
-                "symfony/console": "Support for use of the bin/uuid command line tool."
-            },
-            "bin": [
-                "bin/uuid"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.8.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Rhumsaa\\Uuid\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Huizendveld",
-                    "email": "marijn.huizendveld@gmail.com"
-                },
-                {
-                    "name": "Ben Ramsey",
-                    "homepage": "http://benramsey.com"
-                }
-            ],
-            "description": "A PHP 5.3+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
-            "homepage": "https://github.com/ramsey/uuid",
-            "keywords": [
-                "guid",
-                "identifier",
-                "uuid"
-            ],
-            "time": "2014-11-09 18:48:45"
-        },
-        {
-            "name": "slm/mail",
-            "version": "v1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/juriansluiman/SlmMail.git",
-                "reference": "a017e3914aa56f02fff0747b4ae273816e68046f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/juriansluiman/SlmMail/zipball/a017e3914aa56f02fff0747b4ae273816e68046f",
-                "reference": "a017e3914aa56f02fff0747b4ae273816e68046f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "zendframework/zend-http": "~2.0",
-                "zendframework/zend-mail": "~2.0"
-            },
-            "require-dev": {
-                "aws/aws-sdk-php-zf2": ">=1.0.1",
-                "zendframework/zendframework": "~2.0"
-            },
-            "suggest": {
-                "aws/aws-sdk-php-zf2": "If you need to use Amazon SES"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "SlmMail\\": "src/",
-                    "SlmMailTest\\": "tests/"
-                },
-                "classmap": [
-                    "./"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Jurian Sluiman",
-                    "email": "jurian@juriansluiman.nl",
-                    "homepage": "http://juriansluiman.nl/"
-                },
-                {
-                    "name": "Michaël Gallego",
-                    "email": "mic.gallego@gmail.com",
-                    "homepage": "http://michaelgallego.fr"
-                }
-            ],
-            "description": "Integration of various email service providers in the Zend Framework Zend\\Mail",
-            "homepage": "https://github.com/juriansluiman/SlmMail",
-            "keywords": [
-                "elastic email",
-                "elasticemail",
-                "email",
-                "mailgun",
-                "mandrill",
-                "postage",
-                "postmark",
-                "send grid",
-                "sendgrid",
-                "transactional email",
-                "zf2"
-            ],
-            "time": "2014-06-12 06:46:40"
         },
         {
             "name": "squizlabs/php_codesniffer",

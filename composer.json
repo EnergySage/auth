@@ -15,14 +15,15 @@
         "doctrine/doctrine-orm-module": ">=0.8.0",
         "zf-commons/zfc-user-doctrine-orm": ">=0.1",
         "fousheezy/common": "dev-master",
-        "fousheezy/form": "dev-master"
+        "fousheezy/form": "dev-master",
+	"rhumsaa/uuid": "~2.8",
+	"slm/mail": "1.5.0"
 	},
 	"require-dev": {
         	"phpunit/phpunit":             "~3.7",
         	"squizlabs/php_codesniffer":   "1.5.*",
         	"zendframework/zendframework": ">=2.2.7",
-            "slm/mail": "1.5.0",
-            "rhumsaa/uuid": "~2.8"
+            "slm/mail": "1.5.0"
     	},
     "autoload": {
         "psr-0": {
