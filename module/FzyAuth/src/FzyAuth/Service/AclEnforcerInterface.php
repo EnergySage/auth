@@ -90,5 +90,4 @@ interface AclEnforcerInterface
      * @return bool
      */
     public function hasControllerResource($controller);
-
 }

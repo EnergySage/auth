@@ -7,7 +7,6 @@ use Zend\Mvc\MvcEvent;
 
 class Route extends Base
 {
-
     public function latch(MvcEvent $e)
     {
         if ($this->getModuleConfig()->get('enforce_acl', true)) {
@@ -33,13 +32,13 @@ class Route extends Base
         $missing = true;
         if ($aclEnforcer->hasControllerResource($controller)) {
             $missing = false;
-            if ($aclEnforcer->isAllowed(AclEnforcerInterface::RESOURCE_CONTROLLER_PREFIX . $controller, $action)) {
+            if ($aclEnforcer->isAllowed(AclEnforcerInterface::RESOURCE_CONTROLLER_PREFIX.$controller, $action)) {
                 return $aclEnforcer->handleAllowed($e);
             }
         }
         if ($aclEnforcer->hasRouteResource($route)) {
             $missing = false;
-            if ($aclEnforcer->isAllowed(AclEnforcerInterface::RESOURCE_ROUTE_PREFIX . $route, $action)) {
+            if ($aclEnforcer->isAllowed(AclEnforcerInterface::RESOURCE_ROUTE_PREFIX.$route, $action)) {
                 return $aclEnforcer->handleAllowed($e);
             }
         }

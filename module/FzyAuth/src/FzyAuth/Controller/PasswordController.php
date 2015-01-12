@@ -15,7 +15,6 @@ use ZfcUser\Controller\UserController;
  */
 class PasswordController extends AbstractController
 {
-
     public function indexAction()
     {
         /* @var Form $form */
@@ -30,7 +29,6 @@ class PasswordController extends AbstractController
      */
     public function forgotAction()
     {
-
         $params = $this->getParamsFromRequest();
 
         /* @var Form $form */
@@ -128,5 +126,4 @@ class PasswordController extends AbstractController
     {
         throw new \RuntimeException('Update not authorized');
     }
-
 }

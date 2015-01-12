@@ -15,5 +15,4 @@ class Base extends BaseService
     {
         return $this->getServiceLocator()->get('FzyAuth\CurrentUser');
     }
-
 }

@@ -1,4 +1,6 @@
 <?php
 namespace FzyAuth\Exception;
 
-class Acl extends Base {}
+class Acl extends Base
+{
+}

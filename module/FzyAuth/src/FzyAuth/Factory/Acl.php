@@ -3,7 +3,7 @@ namespace FzyAuth\Factory;
 
 use FzyAuth\Util\Acl\Resource as AclResource;
 use FzyCommon\Util\Params;
-use \Zend\Permissions\Acl\Acl as ZendAcl;
+use Zend\Permissions\Acl\Acl as ZendAcl;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 class Acl
@@ -75,5 +75,4 @@ class Acl
 
         return $this;
     }
-
 }

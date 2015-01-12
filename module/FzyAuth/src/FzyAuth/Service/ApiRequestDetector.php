@@ -11,7 +11,7 @@ class ApiRequestDetector extends Base
     public function getApiRouteName()
     {
         if (!isset($this->apiRouteName)) {
-            $this->apiRouteName = $this->getModuleConfig()->get( 'api_route_name', 'api' );
+            $this->apiRouteName = $this->getModuleConfig()->get('api_route_name', 'api');
         }
 
         return $this->apiRouteName;
@@ -21,6 +21,6 @@ class ApiRequestDetector extends Base
     {
         $apiRouteName = $this->getApiRouteName();
 
-        return $e->getRouteMatch() && ($route = $e->getRouteMatch()->getMatchedRouteName()) && ($route == $apiRouteName || strpos($route, $apiRouteName . '/') === 0);
+        return $e->getRouteMatch() && ($route = $e->getRouteMatch()->getMatchedRouteName()) && ($route == $apiRouteName || strpos($route, $apiRouteName.'/') === 0);
     }
 }

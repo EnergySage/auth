@@ -21,7 +21,6 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
      */
     public function init(MvcEvent $e)
     {
-
     }
 
     /**
@@ -141,5 +140,4 @@ abstract class Base extends \FzyAuth\Service\Base implements AclEnforcerInterfac
 
         return $response;
     }
-
 }

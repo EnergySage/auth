@@ -50,11 +50,10 @@ class Resource
         if ($params->has(static::KEY_RESOURCE)) {
             return new Resource($params->get(static::KEY_RESOURCE), $params->get(static::KEY_PRIVILEGES));
         } elseif ($params->has(static::KEY_CONTROLLER)) {
-            return new Resource(AclEnforcerInterface::RESOURCE_CONTROLLER_PREFIX . $params->get(static::KEY_CONTROLLER), $params->get(static::KEY_ACTIONS));
+            return new Resource(AclEnforcerInterface::RESOURCE_CONTROLLER_PREFIX.$params->get(static::KEY_CONTROLLER), $params->get(static::KEY_ACTIONS));
         } elseif ($params->has(static::KEY_ROUTE)) {
-            return new Resource(AclEnforcerInterface::RESOURCE_ROUTE_PREFIX . $params->get(static::KEY_ROUTE), $params->get(static::KEY_ACTIONS));
+            return new Resource(AclEnforcerInterface::RESOURCE_ROUTE_PREFIX.$params->get(static::KEY_ROUTE), $params->get(static::KEY_ACTIONS));
         }
         throw new MalformedResourceException("Invalid ACL resource configuration");
     }
-
 }

@@ -31,7 +31,7 @@ class Reset extends Password implements EventManagerAwareInterface
 
     protected function changePassword(UserInterface $user, $password)
     {
-        $bcrypt = new Bcrypt;
+        $bcrypt = new Bcrypt();
         $bcrypt->setCost($this->getModuleConfig()->get('password_cost', 14));
 
         $pass = $bcrypt->create($password);
@@ -67,5 +67,4 @@ class Reset extends Password implements EventManagerAwareInterface
     {
         return $this->eventManager;
     }
-
 }

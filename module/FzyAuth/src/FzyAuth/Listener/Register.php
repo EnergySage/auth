@@ -18,6 +18,5 @@ class Register extends Base
             $user = $e->getParam('user');
             $user->setRole(UserInterface::ROLE_USER);
         });
-
     }
 }

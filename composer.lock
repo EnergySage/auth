@@ -79,12 +79,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "3b6668f54ad3f95d68b64a742f6b0de55d6caeb1"
+                "reference": "b5202eb9e83f8db52e0e58867e0a46e63be8332e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/3b6668f54ad3f95d68b64a742f6b0de55d6caeb1",
-                "reference": "3b6668f54ad3f95d68b64a742f6b0de55d6caeb1",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/b5202eb9e83f8db52e0e58867e0a46e63be8332e",
+                "reference": "b5202eb9e83f8db52e0e58867e0a46e63be8332e",
                 "shasum": ""
             },
             "require": {
@@ -139,7 +139,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2014-11-04 15:34:10"
+            "time": "2014-12-23 22:40:37"
         },
         {
             "name": "doctrine/cache",
@@ -147,12 +147,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "803a41469d948bc120a6c913399e8bfc8b5d9650"
+                "reference": "23210e0381057c5976b15dae52ef389fa180e09f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/803a41469d948bc120a6c913399e8bfc8b5d9650",
-                "reference": "803a41469d948bc120a6c913399e8bfc8b5d9650",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/23210e0381057c5976b15dae52ef389fa180e09f",
+                "reference": "23210e0381057c5976b15dae52ef389fa180e09f",
                 "shasum": ""
             },
             "require": {
@@ -209,7 +209,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2014-12-08 23:13:26"
+            "time": "2015-01-11 19:26:38"
         },
         {
             "name": "doctrine/collections",
@@ -283,12 +283,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "559a805125524b0bb6742638784c2979a5c5e607"
+                "reference": "c819359fc0babd36620e4b48d2eb0c6dacbc48a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/559a805125524b0bb6742638784c2979a5c5e607",
-                "reference": "559a805125524b0bb6742638784c2979a5c5e607",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/c819359fc0babd36620e4b48d2eb0c6dacbc48a2",
+                "reference": "c819359fc0babd36620e4b48d2eb0c6dacbc48a2",
                 "shasum": ""
             },
             "require": {
@@ -348,7 +348,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2014-07-27 17:39:50"
+            "time": "2015-01-01 17:37:36"
         },
         {
             "name": "doctrine/dbal",
@@ -356,12 +356,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "505fa3145f2a9e042ccd4744bfaa0ccaed8356de"
+                "reference": "f6ca269380341faa5d96f77d1df444d621a81809"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/505fa3145f2a9e042ccd4744bfaa0ccaed8356de",
-                "reference": "505fa3145f2a9e042ccd4744bfaa0ccaed8356de",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/f6ca269380341faa5d96f77d1df444d621a81809",
+                "reference": "f6ca269380341faa5d96f77d1df444d621a81809",
                 "shasum": ""
             },
             "require": {
@@ -419,7 +419,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2014-12-12 15:20:03"
+            "time": "2015-01-12 15:58:01"
         },
         {
             "name": "doctrine/doctrine-module",
@@ -427,12 +427,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineModule.git",
-                "reference": "9bccf8429aecbe4f9fe0c94c0f60e9fe2eafd162"
+                "reference": "3bbbb532d5a467db514a971d667d3852a80909c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineModule/zipball/9bccf8429aecbe4f9fe0c94c0f60e9fe2eafd162",
-                "reference": "9bccf8429aecbe4f9fe0c94c0f60e9fe2eafd162",
+                "url": "https://api.github.com/repos/doctrine/DoctrineModule/zipball/3bbbb532d5a467db514a971d667d3852a80909c6",
+                "reference": "3bbbb532d5a467db514a971d667d3852a80909c6",
                 "shasum": ""
             },
             "require": {
@@ -501,7 +501,7 @@
                 "module",
                 "zf2"
             ],
-            "time": "2014-12-10 01:04:13"
+            "time": "2015-01-08 20:44:25"
         },
         {
             "name": "doctrine/doctrine-orm-module",
@@ -509,12 +509,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineORMModule.git",
-                "reference": "e1855a64e8dfdd2b3f212855991b005faf3d2b33"
+                "reference": "1d5b0fdda6200836b0d1dcf637d36e35ea48ad6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineORMModule/zipball/e1855a64e8dfdd2b3f212855991b005faf3d2b33",
-                "reference": "e1855a64e8dfdd2b3f212855991b005faf3d2b33",
+                "url": "https://api.github.com/repos/doctrine/DoctrineORMModule/zipball/1d5b0fdda6200836b0d1dcf637d36e35ea48ad6c",
+                "reference": "1d5b0fdda6200836b0d1dcf637d36e35ea48ad6c",
                 "shasum": ""
             },
             "require": {
@@ -584,7 +584,7 @@
                 "orm",
                 "zf2"
             ],
-            "time": "2014-12-10 19:57:07"
+            "time": "2015-01-05 21:27:10"
         },
         {
             "name": "doctrine/inflector",
@@ -592,12 +592,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "8a0b96e65d2399d6f95b75de11134843a2c61feb"
+                "reference": "e5eaf8c7ded0877195b5d2848491e17b1c0a6c4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/8a0b96e65d2399d6f95b75de11134843a2c61feb",
-                "reference": "8a0b96e65d2399d6f95b75de11134843a2c61feb",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/e5eaf8c7ded0877195b5d2848491e17b1c0a6c4d",
+                "reference": "e5eaf8c7ded0877195b5d2848491e17b1c0a6c4d",
                 "shasum": ""
             },
             "require": {
@@ -651,7 +651,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2014-10-05 18:49:49"
+            "time": "2015-01-01 18:34:57"
         },
         {
             "name": "doctrine/instantiator",
@@ -659,12 +659,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "40efa2d8c9e2948b29fdf5d782babaacb08d0c86"
+                "reference": "2a86bb6ae49191bd19976408ff19bbe49dace573"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/40efa2d8c9e2948b29fdf5d782babaacb08d0c86",
-                "reference": "40efa2d8c9e2948b29fdf5d782babaacb08d0c86",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/2a86bb6ae49191bd19976408ff19bbe49dace573",
+                "reference": "2a86bb6ae49191bd19976408ff19bbe49dace573",
                 "shasum": ""
             },
             "require": {
@@ -705,7 +705,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2014-12-12 16:47:07"
+            "time": "2015-01-05 02:10:42"
         },
         {
             "name": "doctrine/lexer",
@@ -767,12 +767,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "5a6bbbd6241d803b686a13a0c373e0febe656987"
+                "reference": "b9c0868f08666a61962f9581a415397118bf99fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/5a6bbbd6241d803b686a13a0c373e0febe656987",
-                "reference": "5a6bbbd6241d803b686a13a0c373e0febe656987",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/b9c0868f08666a61962f9581a415397118bf99fe",
+                "reference": "b9c0868f08666a61962f9581a415397118bf99fe",
                 "shasum": ""
             },
             "require": {
@@ -834,7 +834,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2014-12-10 00:33:23"
+            "time": "2015-01-12 21:05:12"
         },
         {
             "name": "fousheezy/common",
@@ -842,17 +842,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fousheezy/common.git",
-                "reference": "f644fa625b5c4f32f4a2100123f14f1572e357b7"
+                "reference": "7fd8ee42ae9aee729d63a827320d0b414ef97000"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fousheezy/common/zipball/f644fa625b5c4f32f4a2100123f14f1572e357b7",
-                "reference": "f644fa625b5c4f32f4a2100123f14f1572e357b7",
+                "url": "https://api.github.com/repos/fousheezy/common/zipball/7fd8ee42ae9aee729d63a827320d0b414ef97000",
+                "reference": "7fd8ee42ae9aee729d63a827320d0b414ef97000",
                 "shasum": ""
             },
             "require": {
                 "aws/aws-sdk-php": "2.7.2",
                 "doctrine/common": ">=2.4",
+                "doctrine/orm": ">=2.4",
                 "php": ">=5.4",
                 "zendframework/zend-servicemanager": ">=2.2.7"
             },
@@ -884,7 +885,7 @@
                 "module",
                 "zf2"
             ],
-            "time": "2014-12-15 19:48:11"
+            "time": "2015-01-06 16:22:48"
         },
         {
             "name": "fousheezy/form",
@@ -892,12 +893,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fousheezy/form.git",
-                "reference": "1e2fb23c5fb51614b92ccdff16224de2e03d8bb9"
+                "reference": "5f56cc95c7b5b547b027a0025e69b8922f246b34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fousheezy/form/zipball/1e2fb23c5fb51614b92ccdff16224de2e03d8bb9",
-                "reference": "1e2fb23c5fb51614b92ccdff16224de2e03d8bb9",
+                "url": "https://api.github.com/repos/fousheezy/form/zipball/5f56cc95c7b5b547b027a0025e69b8922f246b34",
+                "reference": "5f56cc95c7b5b547b027a0025e69b8922f246b34",
                 "shasum": ""
             },
             "require": {
@@ -936,7 +937,7 @@
                 "module",
                 "zf2"
             ],
-            "time": "2014-12-12 17:59:18"
+            "time": "2015-01-07 21:22:21"
         },
         {
             "name": "guzzle/guzzle",
@@ -944,12 +945,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle3.git",
-                "reference": "eaadef477c9f7fdece3120cd68c38143c0cd4db4"
+                "reference": "5e9f5528619bde654375c012ac172fb199f43dda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/eaadef477c9f7fdece3120cd68c38143c0cd4db4",
-                "reference": "eaadef477c9f7fdece3120cd68c38143c0cd4db4",
+                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/5e9f5528619bde654375c012ac172fb199f43dda",
+                "reference": "5e9f5528619bde654375c012ac172fb199f43dda",
                 "shasum": ""
             },
             "require": {
@@ -1028,7 +1029,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-12-11 05:46:03"
+            "time": "2014-12-18 23:26:35"
         },
         {
             "name": "rhumsaa/uuid",
@@ -1036,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "96a01caa11a2f4136293bf60bbe247597b3eeb36"
+                "reference": "7bf3ac017511b6036116d97276021f0d7398812b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/96a01caa11a2f4136293bf60bbe247597b3eeb36",
-                "reference": "96a01caa11a2f4136293bf60bbe247597b3eeb36",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/7bf3ac017511b6036116d97276021f0d7398812b",
+                "reference": "7bf3ac017511b6036116d97276021f0d7398812b",
                 "shasum": ""
             },
             "require": {
@@ -1094,7 +1095,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2014-11-09 18:48:45"
+            "time": "2015-01-07 14:46:10"
         },
         {
             "name": "slm/mail",
@@ -1172,21 +1173,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "edd4b2ff8c3b4eab7b1063d234be6104c7353947"
+                "reference": "fdb3285803e812d97988470722129c28343f1415"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/edd4b2ff8c3b4eab7b1063d234be6104c7353947",
-                "reference": "edd4b2ff8c3b4eab7b1063d234be6104c7353947",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/fdb3285803e812d97988470722129c28343f1415",
+                "reference": "fdb3285803e812d97988470722129c28343f1415",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.9"
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/event-dispatcher": "~2.1",
-                "symfony/process": "~2.1"
+                "symfony/event-dispatcher": "~2.1|~3.0.0",
+                "symfony/process": "~2.1|~3.0.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
@@ -1220,7 +1221,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-12 16:23:01"
+            "time": "2015-01-09 06:51:41"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1229,23 +1230,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "50f680f99c702c831314c00220c222aaff8916f8"
+                "reference": "eab88ace7a54741087fe4e0c7acd737d1f6186bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/50f680f99c702c831314c00220c222aaff8916f8",
-                "reference": "50f680f99c702c831314c00220c222aaff8916f8",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/eab88ace7a54741087fe4e0c7acd737d1f6186bf",
+                "reference": "eab88ace7a54741087fe4e0c7acd737d1f6186bf",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.9"
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/config": "~2.0",
-                "symfony/dependency-injection": "~2.6",
-                "symfony/expression-language": "~2.6",
-                "symfony/stopwatch": "~2.2"
+                "symfony/config": "~2.0,>=2.0.5|~3.0.0",
+                "symfony/dependency-injection": "~2.6|~3.0.0",
+                "symfony/expression-language": "~2.6|~3.0.0",
+                "symfony/stopwatch": "~2.3|~3.0.0"
             },
             "suggest": {
                 "symfony/dependency-injection": "",
@@ -1278,7 +1279,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-12 16:23:01"
+            "time": "2015-01-09 06:51:41"
         },
         {
             "name": "zendframework/zendframework",
@@ -1286,12 +1287,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zf2.git",
-                "reference": "a621bde29d9af7f0ea876d29a56905fc428a6b9e"
+                "reference": "d76734a1cf4bbdaacf98f28148fe3fbad7a95b13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zf2/zipball/a621bde29d9af7f0ea876d29a56905fc428a6b9e",
-                "reference": "a621bde29d9af7f0ea876d29a56905fc428a6b9e",
+                "url": "https://api.github.com/repos/zendframework/zf2/zipball/d76734a1cf4bbdaacf98f28148fe3fbad7a95b13",
+                "reference": "d76734a1cf4bbdaacf98f28148fe3fbad7a95b13",
                 "shasum": ""
             },
             "require": {
@@ -1396,7 +1397,7 @@
                 "framework",
                 "zf2"
             ],
-            "time": "2014-12-11 04:37:06"
+            "time": "2015-01-12 18:19:34"
         },
         {
             "name": "zendframework/zendxml",
@@ -1502,12 +1503,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ZF-Commons/ZfcUser.git",
-                "reference": "18276109ecb05651159384b426dd4e217dc68025"
+                "reference": "baf0e460796ea92f6c902fa9b007190bccff2b8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ZF-Commons/ZfcUser/zipball/18276109ecb05651159384b426dd4e217dc68025",
-                "reference": "18276109ecb05651159384b426dd4e217dc68025",
+                "url": "https://api.github.com/repos/ZF-Commons/ZfcUser/zipball/baf0e460796ea92f6c902fa9b007190bccff2b8f",
+                "reference": "baf0e460796ea92f6c902fa9b007190bccff2b8f",
                 "shasum": ""
             },
             "require": {
@@ -1571,7 +1572,7 @@
             "keywords": [
                 "zf2"
             ],
-            "time": "2014-10-29 20:36:13"
+            "time": "2015-01-08 13:18:45"
         },
         {
             "name": "zf-commons/zfc-user-doctrine-orm",
@@ -2087,16 +2088,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "b9c19ce1bd9a51d3f42665973088f2e2b82db240"
+                "reference": "16c97a1567ef607b16f843d3ebc99f113cc1957e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/b9c19ce1bd9a51d3f42665973088f2e2b82db240",
-                "reference": "b9c19ce1bd9a51d3f42665973088f2e2b82db240",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/16c97a1567ef607b16f843d3ebc99f113cc1957e",
+                "reference": "16c97a1567ef607b16f843d3ebc99f113cc1957e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.9"
             },
             "type": "library",
             "extra": {
@@ -2125,7 +2126,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-09 17:32:32"
+            "time": "2015-01-09 18:07:24"
         }
     ],
     "aliases": [],
@@ -2135,6 +2136,7 @@
         "fousheezy/form": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.23"
     },

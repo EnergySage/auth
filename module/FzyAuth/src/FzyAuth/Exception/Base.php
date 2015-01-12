@@ -1,4 +1,6 @@
 <?php
 namespace FzyAuth\Exception;
 
-class Base extends \Exception {}
+class Base extends \Exception
+{
+}

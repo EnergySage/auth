@@ -9,7 +9,6 @@ use FzyCommon\Util\Params;
 use Rhumsaa\Uuid\Uuid;
 use Zend\Mail\Transport\TransportInterface;
 use Zend\Mail\Message;
-
 use Zend\Mime\Part as MimePart;
 use Zend\Mime\Message as MimeMessage;
 
@@ -130,5 +129,4 @@ class Forgot extends Password
         // render view
         return $this->getServiceLocator()->get('FzyCommon\Render')->handle($viewFile, $viewVars->get());
     }
-
 }

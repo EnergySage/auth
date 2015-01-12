@@ -1,5 +1,6 @@
 <?php
 namespace FzyAuth\Listener;
+
 use Zend\EventManager\EventManagerAwareInterface;
 use Zend\EventManager\EventManagerInterface;
 use Zend\Http\PhpEnvironment\Response;
@@ -78,5 +79,4 @@ abstract class Base extends BaseService implements ListenerInterface, EventManag
     {
         $this->getEventManager()->getSharedManager()->attach('Zend\Mvc\Application', $mvcEvent, $callback, $priority);
     }
-
 }

@@ -119,5 +119,4 @@ abstract class Password extends Base
     {
         return $this->em()->getRepository($this->getConfig()->getWrapped('zfcuser')->get('user_entity_class'));
     }
-
 }

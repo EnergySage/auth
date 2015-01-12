@@ -111,5 +111,4 @@ interface UserInterface extends BaseInterface, ZfcUserInterface
      * @return $this
      */
     public function setUpdatedTs($updatedTs);
-
 }

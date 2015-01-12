@@ -15,7 +15,6 @@ use Zend\Form\Annotation;
  */
 abstract class AbstractUser extends Entity implements UserInterface
 {
-
     /**
      * @ORM\Column(type="string", length=128, nullable=true, name="first_name")
      * @Annotation\ErrorMessage("Please provide a first name")
@@ -289,7 +288,7 @@ abstract class AbstractUser extends Entity implements UserInterface
      */
     public function getDisplayName()
     {
-        return $this->firstName . ' ' . $this->lastName;
+        return $this->firstName.' '.$this->lastName;
     }
 
     /**
@@ -467,5 +466,4 @@ abstract class AbstractUser extends Entity implements UserInterface
                 )
             );
     }
-
 }
