@@ -5,6 +5,7 @@ use FzyCommon\Entity\BaseNull as Entity;
 
 class UserNull extends Entity implements UserInterface
 {
+
     /**
      * @param string $firstName
      */
@@ -18,7 +19,7 @@ class UserNull extends Entity implements UserInterface
      */
     public function getFirstName()
     {
-        return;
+        return null;
     }
 
     /**
@@ -34,7 +35,7 @@ class UserNull extends Entity implements UserInterface
      */
     public function getLastName()
     {
-        return;
+        return null;
     }
 
     /**
@@ -50,7 +51,7 @@ class UserNull extends Entity implements UserInterface
      */
     public function getUserName()
     {
-        return;
+        return null;
     }
 
     /**
@@ -58,7 +59,7 @@ class UserNull extends Entity implements UserInterface
      */
     public function getEmail()
     {
-        return;
+        return null;
     }
 
     /**
@@ -111,7 +112,7 @@ class UserNull extends Entity implements UserInterface
      */
     public function getId()
     {
-        return;
+        return null;
     }
 
     /**
@@ -132,7 +133,7 @@ class UserNull extends Entity implements UserInterface
      */
     public function getDisplayName()
     {
-        return;
+        return null;
     }
 
     /**
@@ -153,7 +154,7 @@ class UserNull extends Entity implements UserInterface
      */
     public function getPassword()
     {
-        return;
+        return null;
     }
 
     /**
@@ -180,7 +181,7 @@ class UserNull extends Entity implements UserInterface
      */
     public function getPasswordToken()
     {
-        return;
+        return null;
     }
 
     /**
@@ -206,7 +207,7 @@ class UserNull extends Entity implements UserInterface
      */
     public function getUpdatedTs()
     {
-        return;
+        return null;
     }
 
     /**
@@ -217,4 +218,5 @@ class UserNull extends Entity implements UserInterface
     {
         return $this;
     }
+
 }

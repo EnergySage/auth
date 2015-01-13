@@ -15,6 +15,7 @@ use Zend\Form\Annotation;
  */
 abstract class AbstractUser extends Entity implements UserInterface
 {
+
     /**
      * @ORM\Column(type="string", length=128, nullable=true, name="first_name")
      * @Annotation\ErrorMessage("Please provide a first name")
@@ -149,7 +150,7 @@ abstract class AbstractUser extends Entity implements UserInterface
      * @ORM\Column(type="string", length=8);
      * @Annotation\ErrorMessage("Invalid or unknown status")
      * @Annotation\Type("Zend\Form\Element\Radio")
-     * @Annotation\Attributes({"required": true})
+     * @Annotation\Attributes({"required": true, "data-ng-disabled": "saving"})
      * @Annotation\Options({
      *      "label":"Status",
      *      "value_options": {
@@ -288,7 +289,7 @@ abstract class AbstractUser extends Entity implements UserInterface
      */
     public function getDisplayName()
     {
-        return $this->firstName.' '.$this->lastName;
+        return $this->firstName . ' ' . $this->lastName;
     }
 
     /**
@@ -466,4 +467,5 @@ abstract class AbstractUser extends Entity implements UserInterface
                 )
             );
     }
+
 }
