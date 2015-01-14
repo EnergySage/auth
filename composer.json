@@ -1,5 +1,5 @@
 {
-	"name": "fousheezy/auth",
+	"name": "abt/auth",
 	"description": "ZF2 authorization configuration and setup.",
 	"type": "library",
 	"license": "MIT",
@@ -14,8 +14,8 @@
         "doctrine/doctrine-module": ">=0.8.0",
         "doctrine/doctrine-orm-module": ">=0.8.0",
         "zf-commons/zfc-user-doctrine-orm": ">=0.1",
-        "fousheezy/common": "dev-master",
-        "fousheezy/form": "dev-master",
+        "abt/common": "dev-master",
+        "abt/form": "dev-master",
 	"rhumsaa/uuid": "~2.8",
 	"slm/mail": "1.5.0"
 	},
