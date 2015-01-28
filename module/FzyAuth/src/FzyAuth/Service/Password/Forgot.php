@@ -52,6 +52,7 @@ class Forgot extends Password
     protected function sendEmail(UserInterface $user)
     {
         if ($user->isNull()) {
+            $this->log('Unable to send email - user is null');
             // skip everything
             throw new InvalidUser($this->getOptions()->get('invalid_user_error_message', 'Unable to send reset email at this time.'), 400);
         }
@@ -62,6 +63,7 @@ class Forgot extends Password
             // save key now that the message is sent
             $this->em()->flush($user);
         } catch (\Exception $e) {
+            $this->log('Unable to send email - '.$e->getMessage());
             // handle errors in some way
             throw new NotSent($this->getOptions()->get('mail_not_sent_error_message', 'Unable to send reset email at this time.'), 400, $e);
         }
