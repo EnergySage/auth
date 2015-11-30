@@ -16,7 +16,7 @@
         "zf-commons/zfc-user-doctrine-orm": ">=0.1",
         "abt/common": "dev-master",
         "abt/form": "dev-master",
-	"rhumsaa/uuid": "~2.8",
+	"ramsey/uuid": ">=3.*",
 	"slm/mail": "1.5.0"
 	},
 	"require-dev": {
