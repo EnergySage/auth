@@ -6,7 +6,7 @@ use FzyAuth\Exception\Password\InvalidUser;
 use FzyAuth\Exception\Password\NotSent;
 use FzyAuth\Service\Password;
 use FzyCommon\Util\Params;
-use Rhumsaa\Uuid\Uuid;
+use Ramsey\Uuid\Uuid;
 use Zend\Mail\Transport\TransportInterface;
 use Zend\Mail\Message;
 use Zend\Mime\Part as MimePart;
